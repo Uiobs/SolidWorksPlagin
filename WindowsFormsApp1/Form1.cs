@@ -34,7 +34,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(label6, "Радиус шапки: 30мм, Высота шапки: 20мм, Длина стержня: 100мм, Толщина стержня: 15мм");
+            toolTip.SetToolTip(label6, "Радиус шапки: 30мм" 
+                                     + "\nВысота шапки: 20мм" 
+                                     + "\nДлина стержня: 100мм" 
+                                     + "\nТолщина стержня: 15мм");
 
             ToolTip newDoc = new ToolTip();
             newDoc.SetToolTip(button2, "Не рекомендуется, если уже создан документ!");
