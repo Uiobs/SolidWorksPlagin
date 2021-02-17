@@ -34,19 +34,19 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(label6, "Радиус шапки: 30мм" 
-                                     + "\nВысота шапки: 20мм" 
-                                     + "\nДлина стержня: 100мм" 
-                                     + "\nТолщина стержня: 15мм");
+            toolTip.SetToolTip(label6, "Радиус шапки: 30mm" 
+                                     + "\nВысота шапки: 20mm" 
+                                     + "\nДлина стержня: 100mm" 
+                                     + "\nТолщина стержня: 15mm");
 
             ToolTip newDoc = new ToolTip();
             newDoc.SetToolTip(button2, "Не рекомендуется, если уже создан документ!");
             ToolTip sizeInfo = new ToolTip();
-            sizeInfo.SetToolTip(label1, "Размер в mm");
-            sizeInfo.SetToolTip(label2, "Размер в mm");
-            sizeInfo.SetToolTip(label3, "Размер в mm");
-            sizeInfo.SetToolTip(label4, "Размер в mm");
-            sizeInfo.SetToolTip(label7, "Размер в mm");
+            sizeInfo.SetToolTip(label1, "Размер в cm");
+            sizeInfo.SetToolTip(label2, "Размер в cm");
+            sizeInfo.SetToolTip(label3, "Размер в cm");
+            sizeInfo.SetToolTip(label4, "Размер в cm");
+            sizeInfo.SetToolTip(label7, "Размер в cm");
         }
 
         /// <summary>
