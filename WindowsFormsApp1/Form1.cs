@@ -41,6 +41,12 @@ namespace WindowsFormsApp1
 
             ToolTip newDoc = new ToolTip();
             newDoc.SetToolTip(button2, "Не рекомендуется, если уже создан документ!");
+            ToolTip sizeInfo = new ToolTip();
+            sizeInfo.SetToolTip(label1, "Размер в mm");
+            sizeInfo.SetToolTip(label2, "Размер в mm");
+            sizeInfo.SetToolTip(label3, "Размер в mm");
+            sizeInfo.SetToolTip(label4, "Размер в mm");
+            sizeInfo.SetToolTip(label7, "Размер в mm");
         }
 
         /// <summary>
