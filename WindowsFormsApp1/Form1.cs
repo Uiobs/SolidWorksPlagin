@@ -17,19 +17,36 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Переменная для взаимодействие с программой
+        /// </summary>
+        public SldWorks SwApp;
+
+        /// <summary>
+        /// Переменная для взаимодействие с моделировнием
+        /// </summary>
+        public IModelDoc2 swModel;
+
+        /// <summary>
+        /// Начальная загрузка формы
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(label6, "Радиус шапки: 30мм, Высота шапки: 20мм, Длина стержня: 100мм, Толщина стержня: 15мм");
+
+            ToolTip newDoc = new ToolTip();
+            newDoc.SetToolTip(button2, "Не рекомендуется, если уже создан документ!");
         }
 
-        public SldWorks SwApp;
-        public IModelDoc2 swModel;
-
+        /// <summary>
+        /// Создание болта по указанным параметрам
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             SwApp.Visible = true;
-            //SwApp.NewPart();
             swModel = SwApp.IActiveDoc2;
             swModel.SketchManager.CreateCircle(0, 0, 0, 0.037567, 0.007061, 0);
             swModel.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, 0.01, 0.1,
@@ -57,6 +74,9 @@ namespace WindowsFormsApp1
                 false, true, true, true, 0, 0, false);
         }
 
+        /// <summary>
+        /// Очищение документа от объектов
+        /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
@@ -70,6 +90,14 @@ namespace WindowsFormsApp1
                 swModel.ClearSelection2(true);
             }
 
+        }
+
+        /// <summary>
+        /// Создание нового чистого документа
+        /// </summary>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SwApp.NewPart();
         }
     }
 }
