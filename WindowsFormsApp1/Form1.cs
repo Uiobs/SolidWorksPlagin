@@ -39,14 +39,12 @@ namespace WindowsFormsApp1
                                      + "\nДлина стержня: 100mm" 
                                      + "\nТолщина стержня: 15mm");
 
-            ToolTip newDoc = new ToolTip();
-            newDoc.SetToolTip(button2, "Не рекомендуется, если уже создан документ!");
             ToolTip sizeInfo = new ToolTip();
-            sizeInfo.SetToolTip(label1, "Размер в cm");
-            sizeInfo.SetToolTip(label2, "Размер в cm");
-            sizeInfo.SetToolTip(label3, "Размер в cm");
-            sizeInfo.SetToolTip(label4, "Размер в cm");
-            sizeInfo.SetToolTip(label7, "Размер в cm");
+            sizeInfo.SetToolTip(label1, "Размер в mm");
+            sizeInfo.SetToolTip(label2, "Размер в mm");
+            sizeInfo.SetToolTip(label3, "Размер в mm");
+            sizeInfo.SetToolTip(label4, "Размер в mm");
+            sizeInfo.SetToolTip(label7, "Размер в mm");
         }
 
         /// <summary>
@@ -96,17 +94,8 @@ namespace WindowsFormsApp1
             {
                 swModel.Extension.SelectByID("", "", 0, 0, 0, false, 0, null);
                 swModel.EditDelete();
-                swModel.ClearSelection2(true);
+                swModel.ClearSelection();
             }
-
-        }
-
-        /// <summary>
-        /// Создание нового чистого документа
-        /// </summary>
-        private void button2_Click(object sender, EventArgs e)
-        {
-            SwApp.NewPart();
         }
     }
 }
