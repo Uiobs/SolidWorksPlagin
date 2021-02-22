@@ -10,7 +10,14 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Получение данных о параметрах болта
+        /// </summary>
         Variables var = new Variables();
+
+        /// <summary>
+        /// Информация о структуре програмы 
+        /// </summary>
         Program program = new Program();
 
         /// <summary>
@@ -20,7 +27,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(label6, "Радиус шапки: 30mm" 
+            toolTip.SetToolTip(label5, "Радиус шапки: 30mm" 
                                      + "\nВысота шапки: 20mm" 
                                      + "\nДлина стержня: 100mm" 
                                      + "\nТолщина стержня: 15mm");
@@ -50,6 +57,9 @@ namespace WindowsFormsApp1
             program.ClearDoc();
         }
 
+        /// <summary>
+        /// Проверка на пустоту textbox
+        /// </summary>
         public void TakeInfo()
         {
             if (textBox1.Text != string.Empty)
@@ -98,6 +108,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Проверка корректности ввода данных
+        /// </summary>
         public void CheckValidation()
         {
             try

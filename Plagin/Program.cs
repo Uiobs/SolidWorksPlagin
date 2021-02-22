@@ -19,6 +19,9 @@ namespace WindowsFormsApp1
         /// </summary>
         public IModelDoc2 swModel;
 
+        /// <summary>
+        /// Удаление созданной модели
+        /// </summary>
         public void ClearDoc()
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
@@ -33,6 +36,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Создание документа
+        /// </summary>
         public void CreateModel()
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
@@ -65,6 +71,9 @@ namespace WindowsFormsApp1
                 false, true, true, true, 0, 0, false);
         }
 
+        /// <summary>
+        /// Проверка данных на коректный размер
+        /// </summary>
         public void CheckSize(float radTop,float widthTop,float radBolt, float lenghtBolt, float radCut)
         {
             if(radTop > 100 || widthTop > 100 || radBolt > 100 || lenghtBolt > 100 || radCut > 100)
