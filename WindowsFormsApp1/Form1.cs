@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.RadTop = 0.01f;
+                var.RadTop = 3f;
             }
 
             if (textBox2.Text != string.Empty)
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.WidthTop = 0.01f;
+                var.WidthTop = 1f;
             }
 
             if (textBox3.Text != string.Empty)
@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.RadBolt = 0.01f;
+                var.RadBolt = 1.5f;
             }
 
             if (textBox4.Text != string.Empty)
@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.LenghtBolt = 0.01f;
+                var.LenghtBolt = 100f;
             }
 
             if (textBox5.Text != string.Empty)
@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.RadCut = 0.01f;
+                var.RadCut = 1f;
             }
         }
 
@@ -116,7 +116,7 @@ namespace WindowsFormsApp1
             try
             {
                 program.CheckSize(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
-                program.CreateModel();
+                program.CreateModel(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
             }
             catch (Exception)
             {

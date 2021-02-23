@@ -39,14 +39,14 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Создание документа
         /// </summary>
-        public void CreateModel()
+        public void CreateModel(float radTop, float widthTop, float radBolt, float lenghtBolt, float radCut)
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             SwApp.Visible = true;
             swModel = SwApp.IActiveDoc2;
 
-            swModel.SketchManager.CreateCircle(0, 0, 0, 0.037061, 0.007061, 0);
-            swModel.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, 0.01 , 0.1,
+            swModel.SketchManager.CreateCircle(0, 0, 0, radTop/100, 0.007061, 0);
+            swModel.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, widthTop / 100, 0.1,
                 false, false, false, false, 0.01745329251994333364, 0.01745329251994333364,
                 false, false, false, false, true, true, true, 0, 0, false);
             swModel.ISelectionManager.EnableContourSelection = false;
@@ -54,9 +54,10 @@ namespace WindowsFormsApp1
             swModel.Extension.SelectByRay(-0.001382801503069686078, -0.002641729037804907421, 0.009999999999820374796,
                 -0.1709641387276086277, -0.3517034380559542761,
                 -0.920367293491434757, 0.000862288242659958108, 2, false, 0, 0);
+
             swModel.SketchManager.InsertSketch(true);
             swModel.ClearSelection2(true);
-            swModel.SketchManager.CreateCircle(0.000000, 0.000000, 0.000000, 0.026500, 0.022985, 0.000000);
+            swModel.SketchManager.CreateCircle(0.000000, 0.000000, 0.000000, radCut / 100, 0.022985, 0.000000);
             swModel.FeatureManager.FeatureCut4(true, false, false, 0, 0, 0.0005000000000000000104, 0.01000000000000000021,
                 false, false, false, false, 0.01745329251994333364, 0.01745329251994333364, false, false, false, false, false,
                      true, true, true, true, false, 0, 0, false, false);
@@ -65,8 +66,9 @@ namespace WindowsFormsApp1
                 -0.07533917344971632901, 0.9693031959443555445, 0.000862288242659958108, 2, false, 0, 0);
             swModel.SketchManager.InsertSketch(true);
             swModel.ClearSelection2(true);
-            swModel.SketchManager.CreateCircle(0.000000, 0.000000, 0.000000, 0.019607, -0.006153, 0.000000);
-            swModel.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, 0.1000000000000000056, 0.0005000000000000000104,
+
+            swModel.SketchManager.CreateCircle(0.000000, 0.000000, 0.000000, radBolt/100, -0.006153, 0.000000);
+            swModel.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, lenghtBolt/1000, 0.0005000000000000000104,
                 false, false, false, false, 0.01745329251994333364, 0.01745329251994333364, false, false, false,
                 false, true, true, true, 0, 0, false);
         }
@@ -76,7 +78,7 @@ namespace WindowsFormsApp1
         /// </summary>
         public void CheckSize(float radTop,float widthTop,float radBolt, float lenghtBolt, float radCut)
         {
-            if(radTop > 100 || widthTop > 100 || radBolt > 100 || lenghtBolt > 100 || radCut > 100)
+            if(radTop > 100 || widthTop > 100 || radBolt > 100 || lenghtBolt > 500 || radCut > 100)
             {
                 throw new ArgumentException("Слишком большое значение");
             }
