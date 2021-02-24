@@ -78,10 +78,35 @@ namespace WindowsFormsApp1
         /// </summary>
         public void CheckSize(float radTop,float widthTop,float radBolt, float lenghtBolt, float radCut)
         {
-            if(radTop > 100 || widthTop > 100 || radBolt > 100 || lenghtBolt > 500 || radCut > 100)
+            if(radTop > 100)
             {
-                throw new ArgumentException("Слишком большое значение");
+                throw new ArgumentException("Радиус шапки не может быть больше 100mm!");
             }
+            else if(widthTop > 100)
+            {
+                throw new ArgumentException("Толщина шапки не может быть больше 100m");
+            }
+            else if(radBolt > 100)
+            {
+                throw new ArgumentException("Радиус болта не может быть больше 50m");
+            }
+            else if (lenghtBolt > 500)
+            {
+                throw new ArgumentException("Длина болта не может быть больше 500m");
+            }
+            else if (radCut > radTop)
+            {
+                throw new ArgumentException("Радиус вырезки не может быть больше радиуса шапки");
+            }
+            else if (radCut > radTop)
+            {
+                throw new ArgumentException("Радиус вырезки не может быть больше радиуса шапки");
+            }
+            else if (radBolt > radTop)
+            {
+                throw new ArgumentException("Радиус болта не может быть больше радиуса шапки");
+            }
+
         }
 
         static void Main(string[] args) { }

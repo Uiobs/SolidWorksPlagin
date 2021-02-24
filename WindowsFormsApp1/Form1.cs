@@ -118,9 +118,9 @@ namespace WindowsFormsApp1
                 program.CheckSize(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
                 program.CreateModel(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Невернный ввод данных!");
+                MessageBox.Show(ex.Message);
             }
         }
     }
