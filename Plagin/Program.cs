@@ -104,10 +104,6 @@ namespace WindowsFormsApp1
             {
                 throw new ArgumentException("Длина болта не может быть больше 500m");
             }
-            else if (radCut > radTop)
-            {
-                throw new ArgumentException("Радиус вырезки не может быть больше радиуса шапки");
-            }
             else if (radCut >= radTop)
             {
                 throw new ArgumentException("Радиус вырезки не может быть больше или равен радиусу шапки");
