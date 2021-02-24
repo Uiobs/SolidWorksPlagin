@@ -28,9 +28,10 @@ namespace WindowsFormsApp1
             InitializeComponent();
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(label5, "Радиус шапки: 30mm" 
-                                     + "\nВысота шапки: 20mm" 
+                                     + "\nТолщина шапки: 10mm" 
                                      + "\nДлина стержня: 100mm" 
-                                     + "\nТолщина стержня: 15mm");
+                                     + "\nТолщина стержня: 15mm"
+                                     + "\nРадису вырезки: 10mm");
 
             ToolTip sizeInfo = new ToolTip();
             sizeInfo.SetToolTip(label1, "Размер в mm");
@@ -68,7 +69,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.RadTop = 3f;
+                var.RadTop = 30f;
             }
 
             if (textBox2.Text != string.Empty)
@@ -77,7 +78,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.WidthTop = 1f;
+                var.WidthTop = 10f;
             }
 
             if (textBox3.Text != string.Empty)
@@ -86,7 +87,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.RadBolt = 1.5f;
+                var.RadBolt = 15f;
             }
 
             if (textBox4.Text != string.Empty)
@@ -104,7 +105,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                var.RadCut = 1f;
+                var.RadCut = 10f;
             }
         }
 
