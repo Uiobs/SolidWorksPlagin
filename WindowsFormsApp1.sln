@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaginUI", "WindowsFormsApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plagin", "Plagin\Plagin.csproj", "{5699CFC3-A250-49C9-835B-211D8AF4FDDC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{3699AD65-123F-433F-BF09-B59024F7AB13}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Techical Specification.docx = Documentation\Techical Specification.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
