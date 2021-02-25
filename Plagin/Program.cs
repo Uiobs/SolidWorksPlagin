@@ -19,6 +19,17 @@ namespace WindowsFormsApp1
         /// </summary>
         public IModelDoc2 swModel;
 
+
+        public void CreateNewDoc()
+        {
+            SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+            SwApp.Visible = true;
+            SwApp.NewPart();
+            swModel = SwApp.IActiveDoc2;
+            swModel.Extension.SelectByID2("Point1@Origin", "EXTSKETCHPOINT", 0, 0, 0, false, 0, null, 0);
+            swModel.BlankSketch();
+        }
+
         /// <summary>
         /// Удаление созданной модели
         /// </summary>
@@ -28,12 +39,13 @@ namespace WindowsFormsApp1
             SwApp.Visible = true;
             swModel = SwApp.IActiveDoc2;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i <= 6; i++)
             {
                 swModel.Extension.SelectByID("", "", 0, 0, 0, false, 0, null);
                 swModel.EditDelete();
                 swModel.ClearSelection();
             }
+
         }
 
         /// <summary>
