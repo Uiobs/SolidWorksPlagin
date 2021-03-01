@@ -41,13 +41,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,6 +173,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(361, 322);
             this.panel1.TabIndex = 12;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(341, 28);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Создать новый документ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -200,16 +211,6 @@
             this.label7.Size = new System.Drawing.Size(90, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Радиус вырезки";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(341, 28);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Создать новый документ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 

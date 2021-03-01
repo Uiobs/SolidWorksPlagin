@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plagin", "Plagin\Plagin.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{3699AD65-123F-433F-BF09-B59024F7AB13}"
 	ProjectSection(SolutionItems) = preProject
+		Documentation\Project System.docx = Documentation\Project System.docx
 		Documentation\Techical Specification.docx = Documentation\Techical Specification.docx
 	EndProjectSection
 EndProject

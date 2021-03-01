@@ -129,5 +129,10 @@ namespace WindowsFormsApp1
         {
             program.CreateNewDoc();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
