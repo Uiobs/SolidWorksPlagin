@@ -42,8 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
@@ -155,8 +153,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label4);
@@ -184,24 +180,6 @@
             this.button2.Text = "Создать новый документ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(193, 210);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "построится стандартный болт*";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(193, 192);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "При незаполненых данных";
             // 
             // label7
             // 
@@ -246,8 +224,6 @@
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolTip toolTip3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
     }
 }

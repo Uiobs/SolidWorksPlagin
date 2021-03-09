@@ -26,12 +26,11 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(label5, "Радиус шапки: 30mm" 
-                                     + "\nТолщина шапки: 10mm" 
-                                     + "\nДлина стержня: 100mm" 
-                                     + "\nТолщина стержня: 15mm"
-                                     + "\nРадису вырезки: 10mm");
+            textBox1.Text = "30";
+            textBox2.Text = "10";
+            textBox3.Text = "15";
+            textBox4.Text = "100";
+            textBox5.Text = "10";
 
             ToolTip sizeInfo = new ToolTip();
             sizeInfo.SetToolTip(label1, "Размер в mm");
@@ -63,50 +62,11 @@ namespace WindowsFormsApp1
         /// </summary>
         public void TakeInfo()
         {
-            if (textBox1.Text != string.Empty)
-            {
-                var.RadTop = float.Parse(textBox1.Text);
-            }
-            else
-            {
-                var.RadTop = 30f;
-            }
-
-            if (textBox2.Text != string.Empty)
-            {
-                var.WidthTop = float.Parse(textBox2.Text);
-            }
-            else
-            {
-                var.WidthTop = 10f;
-            }
-
-            if (textBox3.Text != string.Empty)
-            {
-                var.RadBolt = float.Parse(textBox3.Text);
-            }
-            else
-            {
-                var.RadBolt = 15f;
-            }
-
-            if (textBox4.Text != string.Empty)
-            {
-                var.LenghtBolt = float.Parse(textBox4.Text);
-            }
-            else
-            {
-                var.LenghtBolt = 100f;
-            }
-
-            if (textBox5.Text != string.Empty)
-            {
-                var.RadCut = float.Parse(textBox5.Text);
-            }
-            else
-            {
-                var.RadCut = 10f;
-            }
+            var.RadTop = float.Parse(textBox1.Text);
+            var.WidthTop = float.Parse(textBox2.Text);
+            var.RadBolt = float.Parse(textBox3.Text);
+            var.LenghtBolt = float.Parse(textBox4.Text);
+            var.RadCut = float.Parse(textBox5.Text);
         }
 
         /// <summary>
