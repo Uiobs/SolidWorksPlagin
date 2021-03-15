@@ -13,12 +13,12 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Получение данных о параметрах болта
         /// </summary>
-        Variables var = new Variables();
+        Parametrs var = new Parametrs();
 
         /// <summary>
         /// Информация о структуре програмы 
         /// </summary>
-        Program program = new Program();
+        Builder builder = new Builder();
 
         /// <summary>
         /// Начальная загрузка формы
@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
-            program.ClearDoc();
+            builder.ClearDoc();
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace WindowsFormsApp1
         {
             try
             {
-                program.CheckSize(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
-                program.CreateModel(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
+                CheckSize(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
+                builder.CreateModel(var.RadTop, var.WidthTop, var.RadBolt, var.LenghtBolt, var.RadCut);
             }
             catch (Exception ex)
             {
@@ -87,7 +87,36 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            program.CreateNewDoc();
+            builder.CreateNewDoc();
+        }
+
+        public void CheckSize(float radTop, float widthTop, float radBolt, float lenghtBolt, float radCut)
+        {
+            if (radTop > 100)
+            {
+                throw new ArgumentException("Радиус шапки не может быть больше 100mm!");
+            }
+            else if (widthTop > 100)
+            {
+                throw new ArgumentException("Толщина шапки не может быть больше 100m");
+            }
+            else if (radBolt > 100)
+            {
+                throw new ArgumentException("Радиус болта не может быть больше 50m");
+            }
+            else if (lenghtBolt > 500)
+            {
+                throw new ArgumentException("Длина болта не может быть больше 500m");
+            }
+            else if (radCut >= radTop)
+            {
+                throw new ArgumentException("Радиус вырезки не может быть больше или равен радиусу шапки");
+            }
+            else if (radBolt >= radTop)
+            {
+                throw new ArgumentException("Радиус болта не может быть больше или равен радиуса шапки");
+            }
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

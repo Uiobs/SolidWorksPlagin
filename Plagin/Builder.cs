@@ -7,7 +7,7 @@ using SolidWorks.Interop.sldworks;
 
 namespace WindowsFormsApp1
 {
-    public class Program
+    public class Builder
     {
         /// <summary>
         /// Переменная для взаимодействие с программой
@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         /// </summary>
         public IModelDoc2 swModel;
 
-
+    
         public void CreateNewDoc()
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
@@ -91,38 +91,6 @@ namespace WindowsFormsApp1
                 swModel.FeatureManager.FeatureExtrusion2(true, false,false, 0, 0, lenghtBolt / 1000, 0,
                 false, false, false, false, 0.0174, 0.0174, false, false, false,
                 false, true, true, true, 0, 0, false);
-            }
-
-        }
-
-        /// <summary>
-        /// Проверка данных на коректный размер
-        /// </summary>
-        public void CheckSize(float radTop,float widthTop,float radBolt, float lenghtBolt, float radCut)
-        {
-            if(radTop > 100)
-            {
-                throw new ArgumentException("Радиус шапки не может быть больше 100mm!");
-            }
-            else if(widthTop > 100)
-            {
-                throw new ArgumentException("Толщина шапки не может быть больше 100m");
-            }
-            else if(radBolt > 100)
-            {
-                throw new ArgumentException("Радиус болта не может быть больше 50m");
-            }
-            else if (lenghtBolt > 500)
-            {
-                throw new ArgumentException("Длина болта не может быть больше 500m");
-            }
-            else if (radCut >= radTop)
-            {
-                throw new ArgumentException("Радиус вырезки не может быть больше или равен радиусу шапки");
-            }
-            else if (radBolt >= radTop)
-            {
-                throw new ArgumentException("Радиус болта не может быть больше или равен радиуса шапки");
             }
 
         }

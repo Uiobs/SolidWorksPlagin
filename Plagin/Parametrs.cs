@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Plagin
 {
-    public class Variables
+    public class Parametrs
     {
         /// <summary>
         /// Отвечает за радиус шапки болта
