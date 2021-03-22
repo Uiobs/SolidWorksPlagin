@@ -38,6 +38,8 @@ namespace WindowsFormsApp1
             sizeInfo.SetToolTip(label3, "Размер в mm");
             sizeInfo.SetToolTip(label4, "Размер в mm");
             sizeInfo.SetToolTip(label7, "Размер в mm");
+
+            panel1.Enabled = false;
         }
 
         /// <summary>
@@ -88,6 +90,7 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             builder.CreateNewDoc();
+            panel1.Enabled = true;
         }
 
         public void CheckSize(float radTop, float widthTop, float radBolt, float lenghtBolt, float radCut)

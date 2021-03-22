@@ -12,14 +12,13 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Переменная для взаимодействие с программой
         /// </summary>
-        public SldWorks SwApp;
+        private SldWorks SwApp;
 
         /// <summary>
         /// Переменная для взаимодействие с моделировнием
         /// </summary>
-        public IModelDoc2 swModel;
+        private IModelDoc2 swModel;
 
-    
         public void CreateNewDoc()
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
