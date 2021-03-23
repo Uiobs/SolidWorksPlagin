@@ -41,8 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CreateDoc = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.CreateDoc = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
@@ -170,6 +170,15 @@
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 136);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Радиус вырезки";
+            // 
             // CreateDoc
             // 
             this.CreateDoc.Location = new System.Drawing.Point(12, 28);
@@ -179,15 +188,6 @@
             this.CreateDoc.Text = "Создать новый документ";
             this.CreateDoc.UseVisualStyleBackColor = true;
             this.CreateDoc.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Радиус вырезки";
             // 
             // Form1
             // 

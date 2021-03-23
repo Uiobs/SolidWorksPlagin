@@ -33,11 +33,10 @@ namespace WindowsFormsApp1
             textBox5.Text = "10";
 
             ToolTip sizeInfo = new ToolTip();
-            sizeInfo.SetToolTip(label1, "Размер в mm");
-            sizeInfo.SetToolTip(label2, "Размер в mm");
-            sizeInfo.SetToolTip(label3, "Размер в mm");
-            sizeInfo.SetToolTip(label4, "Размер в mm");
-            sizeInfo.SetToolTip(label7, "Размер в mm");
+            sizeInfo.SetToolTip(label1, "Min-1mm " + "\nMax-100mm");
+            sizeInfo.SetToolTip(label2, "Min-1mm" + "\nMax - 100mm");
+            sizeInfo.SetToolTip(label3, "Min-1mm" + "\nMax-50mm");
+            sizeInfo.SetToolTip(label4, "Min-1mm" + "\nMax-500mm");
 
             panel1.Enabled = false;
         }
@@ -89,7 +88,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            builder.CreateNewDoc();
+            //builder.CreateNewDoc();
             panel1.Enabled = true;
         }
 
