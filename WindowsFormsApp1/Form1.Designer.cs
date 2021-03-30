@@ -58,7 +58,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Создать фигуру";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.CreateModel_Click);
             // 
             // button3
             // 
@@ -69,7 +69,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Очистить";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.ClearDoc_Click);
             // 
             // textBox1
             // 
@@ -187,7 +187,7 @@
             this.CreateDoc.TabIndex = 17;
             this.CreateDoc.Text = "Создать новый документ";
             this.CreateDoc.UseVisualStyleBackColor = true;
-            this.CreateDoc.Click += new System.EventHandler(this.button2_Click);
+            this.CreateDoc.Click += new System.EventHandler(this.CreateDoc_Click);
             // 
             // Form1
             // 

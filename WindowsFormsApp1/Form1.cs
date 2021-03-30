@@ -44,16 +44,16 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Создание болта по указанным параметрам
         /// </summary>
-        private void button1_Click(object sender, EventArgs e)
+        private void CreateModel_Click(object sender, EventArgs e)
         {
             TakeInfo();
-            CheckValidation();
+            Validation();
         }
 
         /// <summary>
         /// Очищение документа от объектов
         /// </summary>
-        private void button3_Click(object sender, EventArgs e)
+        private void ClearDoc_Click(object sender, EventArgs e)
         {
             builder.ClearDoc();
         }
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Проверка на пустоту textbox
         /// </summary>
-        public void TakeInfo()
+        private void TakeInfo()
         {
             var.RadTop = float.Parse(textBox1.Text);
             var.WidthTop = float.Parse(textBox2.Text);
@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Проверка корректности ввода данных
         /// </summary>
-        public void CheckValidation()
+        private void Validation()
         {
             try
             {
@@ -86,13 +86,19 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Кнопка создания нового документа
+        /// </summary>
+        private void CreateDoc_Click(object sender, EventArgs e)
         {
-            //builder.CreateNewDoc();
+            builder.CreateNewDoc();
             panel1.Enabled = true;
         }
 
-        public void CheckSize(float radTop, float widthTop, float radBolt, float lenghtBolt, float radCut)
+        /// <summary>
+        /// Проверка данных на совместимость параметров
+        /// </summary>
+        private void CheckSize(float radTop, float widthTop, float radBolt, float lenghtBolt, float radCut)
         {
             if (radTop > 100)
             {

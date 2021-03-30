@@ -19,6 +19,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private IModelDoc2 swModel;
 
+        /// <summary>
+        /// Создание нового документа
+        /// </summary>
         public void CreateNewDoc()
         {
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
