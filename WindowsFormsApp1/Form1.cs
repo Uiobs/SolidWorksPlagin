@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void CreateDoc_Click(object sender, EventArgs e)
         {
-            //builder.CreateNewDoc();
+            builder.CreateNewDoc();
             panel1.Enabled = true;
         }
 
@@ -134,7 +134,7 @@ namespace WindowsFormsApp1
         {
             char number = e.KeyChar;
             
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && (e.KeyChar <= 39 || e.KeyChar >= 46) && number != 47 && number != 61)
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 &&  number != 44)
             {
                 e.Handled = true;
             }
