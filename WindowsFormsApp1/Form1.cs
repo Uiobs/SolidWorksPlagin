@@ -9,8 +9,10 @@ using Plagin;
 
 namespace WindowsFormsApp1
 {
+    //TODO: RSDN naming
     public partial class Form1 : Form
     {
+         //TODO: RSDN
         /// <summary>
         /// Получение данных о параметрах болта
         /// </summary>
@@ -101,6 +103,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void CheckSize(float radTop, float widthTop, float radBolt, float lenghtBolt, float radCut)
         {
+            //TODO: Проверку перенести в параметры
             if (radTop > 100)
             {
                 throw new ArgumentException("Радиус шапки не может быть больше 100mm!");
@@ -134,7 +137,8 @@ namespace WindowsFormsApp1
         {
             char number = e.KeyChar;
             
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 &&  number != 44)
+            //TODO: Поименовать 
+            if ((e.KeyChar <= '0' || e.KeyChar >= '9') && number != 8 &&  number != 44)
             {
                 e.Handled = true;
             }

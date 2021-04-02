@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Plagin
 {
+    //TODO: XML комментарии?
     public class Parametrs
     {
         /// <summary>
@@ -33,6 +34,7 @@ namespace Plagin
         /// </summary>
         private float _radCut;
 
+        //TODO: В автосвойства
         /// <summary>
         /// Модификатор доступа к радиусу шапки болта
         /// </summary>

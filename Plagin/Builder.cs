@@ -5,15 +5,19 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 
+//TODO: RSDN naming
 namespace WindowsFormsApp1
 {
+    //TODO: XML комментарии?
     public class Builder
     {
+         //TODO: RSDN
         /// <summary>
         /// Переменная для взаимодействие с программой
         /// </summary>
         private SldWorks SwApp;
 
+         //TODO: RSDN
         /// <summary>
         /// Переменная для взаимодействие с моделировнием
         /// </summary>
@@ -24,6 +28,7 @@ namespace WindowsFormsApp1
         /// </summary>
         public void CreateNewDoc()
         {
+            //TODO: Duplication
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             SwApp.Visible = true;
             SwApp.NewPart();
@@ -37,10 +42,12 @@ namespace WindowsFormsApp1
         /// </summary>
         public void ClearDoc()
         {
+            //TODO: Duplication
             SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             SwApp.Visible = true;
             swModel = SwApp.IActiveDoc2;
 
+            //TODO: Почему 6?
             for (int i = 0; i <= 6; i++)
             {
                 swModel.Extension.SelectByID("", "", 0, 0, 0, false, 0, null);
@@ -61,6 +68,8 @@ namespace WindowsFormsApp1
 
             ClearDoc();
 
+            //TODO: Перевод в мм вынести в отдельный метод
+             //TODO: RSDN
             swModel.SketchManager.CreateCircle(0, 0, 0, radTop/1000, 0.007061, 0);
             swModel.FeatureManager.FeatureExtrusion2(true, false,false, 0, 0, widthTop / 1000, 0.1,
                 false, false, false, false, 0.01745329251994333364, 0.01745329251994333364,
@@ -96,7 +105,7 @@ namespace WindowsFormsApp1
             }
 
         }
-
+        //TODO: убрать!
         static void Main(string[] args) { }
     }
 }
