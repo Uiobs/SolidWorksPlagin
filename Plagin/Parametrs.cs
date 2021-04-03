@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Plagin
 {
-    //TODO: XML комментарии?
+    /// <summary>
+    /// Класс, содержащий параметры модели
+    /// </summary>
     public class Parametrs
     {
         /// <summary>
@@ -38,51 +36,57 @@ namespace Plagin
         /// <summary>
         /// Модификатор доступа к радиусу шапки болта
         /// </summary>
-        public float RadTop
-        {
-            get { return _radTop; }
-
-            set { _radTop = value; }
-        }
+        public float RadTop{ get; set;}
 
         /// <summary>
         /// Модификатор доступа к высоте шапки болта
         /// </summary>
-        public float WidthTop
-        {
-            get { return _widthTop; }
-
-            set { _widthTop = value; }
-        }
+        public float WidthTop { get; set; }
 
         /// <summary>
         /// Модификатор доступа к радиусу стержня болта
         /// </summary>
-        public float RadBolt
-        {
-            get { return _radBolt; }
-
-            set { _radBolt = value; }
-        }
+        public float RadBolt { get; set; }
 
         /// <summary>
         /// Модификатор доступа к длине болта
         /// </summary>
-        public float LenghtBolt
-        {
-            get { return _lengthBolt; }
-
-            set { _lengthBolt = value; }
-        }
+        public float LenghtBolt { get; set; }
 
         /// <summary>
         /// Модификатор доступа к радиусу вырезки болта
         /// </summary>
-        public float RadCut
-        {
-            get { return _radCut; }
+        public float RadCut { get; set; }
 
-            set { _radCut = value; }
+        /// <summary>
+        /// Проверка данных на совместимость параметров
+        /// </summary>
+        public void CheckSize(float radTop, float widthTop, float radBolt, float lenghtBolt, float radCut)
+        {
+            if (radTop > 100)
+            {
+                throw new ArgumentException("Радиус шапки не может быть больше 100mm!");
+            }
+            else if (widthTop > 100)
+            {
+                throw new ArgumentException("Толщина шапки не может быть больше 100m");
+            }
+            else if (radBolt > 100)
+            {
+                throw new ArgumentException("Радиус болта не может быть больше 50m");
+            }
+            else if (lenghtBolt > 500)
+            {
+                throw new ArgumentException("Длина болта не может быть больше 500m");
+            }
+            else if (radCut >= radTop)
+            {
+                throw new ArgumentException("Радиус вырезки не может быть больше или равен радиусу шапки");
+            }
+            else if (radBolt >= radTop)
+            {
+                throw new ArgumentException("Радиус болта не может быть больше или равен радиуса шапки");
+            }
         }
     }
 }
