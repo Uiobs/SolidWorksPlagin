@@ -23,11 +23,11 @@ namespace Plagin
         /// </summary>
         public void CreateNewDoc()
         {
-            //Connector();
+           // Connector();
             //_swApp.NewPart();
             //_swModel.Extension.SelectByID2("Point1@Origin", "EXTSKETCHPOINT",
-             //   0, 0, 0, false, 0, null, 0);
-            //_swModel.BlankSketch();
+            //    0, 0, 0, false, 0, null, 0);
+            _swModel.BlankSketch();
         }
 
         /// <summary>

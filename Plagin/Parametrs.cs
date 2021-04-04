@@ -32,11 +32,10 @@ namespace Plagin
         /// </summary>
         private float _radCut;
 
-        //TODO: В автосвойства
         /// <summary>
         /// Модификатор доступа к радиусу шапки болта
         /// </summary>
-        public float RadTop{ get; set;}
+        public float RadTop { get; set; }
 
         /// <summary>
         /// Модификатор доступа к высоте шапки болта
@@ -46,7 +45,7 @@ namespace Plagin
         /// <summary>
         /// Модификатор доступа к радиусу стержня болта
         /// </summary>
-        public float RadBolt { get; set; }
+        public float RadCut { get; set; }
 
         /// <summary>
         /// Модификатор доступа к длине болта
@@ -56,7 +55,7 @@ namespace Plagin
         /// <summary>
         /// Модификатор доступа к радиусу вырезки болта
         /// </summary>
-        public float RadCut { get; set; }
+        public float RadBolt { get; set; }
 
         /// <summary>
         /// Проверка данных на совместимость параметров

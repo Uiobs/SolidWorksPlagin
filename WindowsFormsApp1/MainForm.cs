@@ -6,7 +6,6 @@ namespace PlaginUI
 {
     public partial class MainForm : Form
     {
-         //TODO: RSDN
         /// <summary>
         /// Получение данных о параметрах болта
         /// </summary>
@@ -23,11 +22,6 @@ namespace PlaginUI
         public MainForm()
         {
             InitializeComponent();
-            textBox1.Text = "30";
-            textBox2.Text = "10";
-            textBox3.Text = "15";
-            textBox4.Text = "100";
-            textBox5.Text = "10";
 
             ToolTip sizeInfo = new ToolTip();
             sizeInfo.SetToolTip(label1, "Min-1mm " + "\nMax-100mm");
@@ -74,11 +68,10 @@ namespace PlaginUI
         {
             try
             {
-
                 Parametrs.CheckSize(Parametrs.RadTop, Parametrs.WidthTop, Parametrs.RadBolt,
                     Parametrs.LenghtBolt, Parametrs.RadCut);
-                Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
-                    Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
+                //Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
+                    //Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
             }
             catch (Exception ex)
             {
@@ -91,21 +84,21 @@ namespace PlaginUI
         /// </summary>
         private void CreateDoc_Click(object sender, EventArgs e)
         {
-            Builder.CreateNewDoc();
+            //Builder.CreateNewDoc();
             panel1.Enabled = true;
         }
 
         /// <summary>
         /// Проверка на ввод букв
         /// </summary>
+        /// <remarks>
+        /// e.KeyChar = 47-58 - цифры от 0-9
+        /// e.KeyChar = 8 - backspace
+        /// e.KeyChar = 44 - запятая
+        /// </remarks>
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char number = e.KeyChar;
-
-            //47-58: цифры от 0 до 9
-            //8: backspace
-            //44: запятая
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44)
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8 && e.KeyChar != 44)
             {
                 e.Handled = true;
             }
