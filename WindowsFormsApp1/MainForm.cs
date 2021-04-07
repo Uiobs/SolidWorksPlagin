@@ -37,8 +37,19 @@ namespace PlaginUI
         /// </summary>
         private void CreateModel_Click(object sender, EventArgs e)
         {
-            TakeInfo();
-            Validation();
+            try
+            {
+            Parametrs.RadTop = float.Parse(textBox1.Text);
+            Parametrs.WidthTop = float.Parse(textBox2.Text);
+            Parametrs.RadBolt = float.Parse(textBox3.Text);
+            Parametrs.LenghtBolt = float.Parse(textBox4.Text);
+            Parametrs.RadCut = float.Parse(textBox5.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         /// <summary>
@@ -50,33 +61,13 @@ namespace PlaginUI
         }
 
         /// <summary>
-        /// Проверка на пустоту textbox
-        /// </summary>
-        private void TakeInfo()
-        {
-            Parametrs.RadTop = float.Parse(textBox1.Text);
-            Parametrs.WidthTop = float.Parse(textBox2.Text);
-            Parametrs.RadBolt = float.Parse(textBox3.Text);
-            Parametrs.LenghtBolt = float.Parse(textBox4.Text);
-            Parametrs.RadCut = float.Parse(textBox5.Text);
-        }
-
-        /// <summary>
         /// Проверка корректности ввода данных
         /// </summary>
         private void Validation()
         {
-            try
-            {
-                Parametrs.CheckSize(Parametrs.RadTop, Parametrs.WidthTop, Parametrs.RadBolt,
-                    Parametrs.LenghtBolt, Parametrs.RadCut);
-                //Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
-                    //Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
+            //Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
+
         }
 
         /// <summary>
