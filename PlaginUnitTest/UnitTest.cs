@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Plagin;
 using Assert = NUnit.Framework.Assert;
 
-namespace PlaginUnitTest
+namespace UnitTest
 {
     [TestFixture]
     public class UnitTest
@@ -21,35 +21,52 @@ namespace PlaginUnitTest
             var exepted_radTop = 30;
             var exepted_widthTop = 10;
 
-            Parametrs.LenghtBolt = 100;
-            Parametrs.RadBolt = 15;
-            Parametrs.RadCut = 10;
             Parametrs.RadTop = 30;
             Parametrs.WidthTop = 10;
-
+            Parametrs.RadCut = 10;
+            Parametrs.LenghtBolt = 100;
+            Parametrs.RadBolt = 15;
+            
             //assert
-            Assert.AreEqual(exepted_lengtBolt, Parametrs.LenghtBolt, "Длина болта больше допустимой");
-            Assert.AreEqual(exepted_radBold, Parametrs.RadBolt, "Радиус болта больше допустимой");
-            Assert.AreEqual(exepted_radCut, Parametrs.RadCut, "Радиус вырезки больше допустимой");
-            Assert.AreEqual(exepted_radTop, Parametrs.RadTop, "Радиус шапки больше допустимой");
-            Assert.AreEqual(exepted_widthTop, Parametrs.WidthTop, "Толщина вырезки больше допустимой");
+            Assert.AreEqual(Parametrs.LenghtBolt, exepted_lengtBolt, "Длина болта больше допустимой");
+            Assert.AreEqual(Parametrs.RadBolt, exepted_radBold, "Радиус болта больше допустимой");
+            Assert.AreEqual(Parametrs.RadCut, exepted_radCut, "Радиус вырезки больше допустимой");
+            Assert.AreEqual(Parametrs.RadTop, exepted_radTop, "Радиус шапки больше допустимой");
+            Assert.AreEqual(Parametrs.WidthTop, exepted_widthTop, "Толщина вырезки больше допустимой");
         }
 
         [Test(Description = "Негативный тест на корректность значений")]
         public void UncorrectParametrs()
         {
             //setup
-            var _lengtBolt = 1000;
-            var _radBold = 150;
-            var _radCut = 100;
-            var _radTop = 300;
-            var _widthTop = 100;
+            var wrong_lengtBolt = 1000;
+            var wrong_radBold = 150;
+            var wrong_radCut = 100;
+            var wrong_radTop = 300;
+            var wrong_widthTop = 100;
 
             //assert
-            var message = "Некоректная длина";
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.CheckSize(_lengtBolt, _lengtBolt, _radCut, _radTop, _widthTop); },
-            message);
+            () => { Parametrs.RadTop = wrong_radTop;
+                    Parametrs.RadTop = wrong_radTop;},
+            "Некоректная длина болта");
+            Assert.Throws<ArgumentException>(
+            () => { Parametrs.WidthTop = wrong_widthTop;
+                    Parametrs.WidthTop = wrong_widthTop;},
+            "Некоректный радиус болта");
+            Assert.Throws<ArgumentException>(
+            () => { Parametrs.RadCut = wrong_radCut;
+                    Parametrs.RadCut = wrong_radCut;},
+            "Некоректный радиус вырезки болта");
+            Assert.Throws<ArgumentException>(
+            () => { Parametrs.LenghtBolt = wrong_lengtBolt;
+                    Parametrs.LenghtBolt = wrong_lengtBolt;},
+            "Некоректный радиус шапки болта");
+            Assert.Throws<ArgumentException>(
+            () => { Parametrs.RadBolt = wrong_radBold;
+                    Parametrs.RadBolt = wrong_radBold;},
+            "Некоректная толщина шапки");
+
         }
     }
 }

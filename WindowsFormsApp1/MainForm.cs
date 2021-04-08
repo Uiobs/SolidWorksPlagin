@@ -45,8 +45,6 @@ namespace PlaginUI
             Parametrs.RadBolt = float.Parse(textBox3.Text);
             Parametrs.LenghtBolt = float.Parse(textBox4.Text);
             Parametrs.RadCut = float.Parse(textBox5.Text);
-            //Builder.ChangeSize(Parametrs.RadTop, Parametrs.WidthTop,
-                //Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
             Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
                 Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
             }
