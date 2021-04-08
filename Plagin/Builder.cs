@@ -35,7 +35,7 @@ namespace Plagin
         /// </summary>
         public void ClearDoc()
         {
-            //Connector();
+            Connector();
 
             //Удаляет последовательно элементы в моделе, элементов в моделе 7
             for (int i = 0; i <= 6; i++)
@@ -56,8 +56,8 @@ namespace Plagin
             _swApp.Visible = true;
             _swModel = _swApp.IActiveDoc2;
 
-            ChangeSize(radTop,widthTop,radBolt,lenghtBolt,radCut);
             ClearDoc();
+            ChangeSize(ref radTop,ref widthTop,ref radBolt,ref lenghtBolt,ref radCut);
 
             _swModel.SketchManager.CreateCircle(0, 0, 0, radTop, 0.007061
                 , 0);
@@ -72,13 +72,11 @@ namespace Plagin
                 -0.920367293491434757, 0.000862288242659958108, 2, false, 0, 0);
             _swModel.SketchManager.InsertSketch(true);
             _swModel.ClearSelection2(true);
-            _swModel.SketchManager.CreateCircle(0.000000, 0.000000, 0.000000,
-                radCut, 0.022985, 0.000000);
-            _swModel.FeatureManager.FeatureCut4(true, false, false, 0, 0, 
-                0.0005000000000000000104, 0.01000000000000000021,
-                false, false, false, false, 0.01745329251994333364,
-                0.01745329251994333364, false, false, false, false, false,
-                     true, true, true, true, false, 0, 0, false, false);
+            _swModel.SketchManager.CreateCircle(0,0,0,radCut,0.0022985,0);
+            _swModel.FeatureManager.FeatureCut4(true, false, false, 0, 0,
+                0.001, 0.001,false, false, false, false, 0.3,
+                0.3, false, false, false, false, false,
+                true, true, true, true, false, 0, 0, false, false);
             _swModel.ISelectionManager.EnableContourSelection = false;
             _swModel.Extension.SelectByRay(0.003617989768585516686,
                 -0.00345214744564970033, 0, -0.2340412854091606099,
@@ -89,7 +87,7 @@ namespace Plagin
             _swModel.SketchManager.CreateCircle(0, 0, 0, radBolt ,
                 -0.006153, 0.000000);
 
-            if (widthTop > 10)
+            if (widthTop > 0.01)
             {
                 _swModel.FeatureManager.FeatureExtrusion2(true, true, true, 0, 0,
                     lenghtBolt + widthTop, 0,
@@ -118,8 +116,8 @@ namespace Plagin
         /// <summary>
         /// Перевод параметров в значения SolidWorks
         /// </summary>
-        private void ChangeSize(float radTop, float widthTop, float radBolt,
-            float lenghtBolt, float radCut)
+        public void ChangeSize(ref float radTop, ref float widthTop, ref float radBolt,
+            ref float lenghtBolt, ref float radCut)
         {
             radTop /= 1000;
             widthTop /= 1000;

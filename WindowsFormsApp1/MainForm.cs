@@ -37,6 +37,7 @@ namespace PlaginUI
         /// </summary>
         private void CreateModel_Click(object sender, EventArgs e)
         {
+            Validation();
             try
             {
             Parametrs.RadTop = float.Parse(textBox1.Text);
@@ -44,12 +45,15 @@ namespace PlaginUI
             Parametrs.RadBolt = float.Parse(textBox3.Text);
             Parametrs.LenghtBolt = float.Parse(textBox4.Text);
             Parametrs.RadCut = float.Parse(textBox5.Text);
+            //Builder.ChangeSize(Parametrs.RadTop, Parametrs.WidthTop,
+                //Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
+            Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
+                Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         /// <summary>
@@ -65,9 +69,11 @@ namespace PlaginUI
         /// </summary>
         private void Validation()
         {
-            //Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
-            //Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
-
+            Parametrs.RadTop = float.Parse(textBox1.Text);
+            Parametrs.WidthTop = float.Parse(textBox2.Text);
+            Parametrs.RadBolt = float.Parse(textBox3.Text);
+            Parametrs.LenghtBolt = float.Parse(textBox4.Text);
+            Parametrs.RadCut = float.Parse(textBox5.Text); ;
         }
 
         /// <summary>
