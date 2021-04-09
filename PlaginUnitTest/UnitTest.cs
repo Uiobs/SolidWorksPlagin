@@ -47,24 +47,19 @@ namespace UnitTest
 
             //assert
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadTop = wrong_radTop;
-                    Parametrs.RadTop = wrong_radTop;},
+            () => { Parametrs.RadTop = wrong_radTop;},
             "Некоректная длина болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.WidthTop = wrong_widthTop;
-                    Parametrs.WidthTop = wrong_widthTop;},
+            () => { Parametrs.WidthTop = wrong_widthTop;},
             "Некоректный радиус болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadCut = wrong_radCut;
-                    Parametrs.RadCut = wrong_radCut;},
+            () => { Parametrs.RadCut = wrong_radCut;},
             "Некоректный радиус вырезки болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.LenghtBolt = wrong_lengtBolt;
-                    Parametrs.LenghtBolt = wrong_lengtBolt;},
+            () => { Parametrs.LenghtBolt = wrong_lengtBolt;},
             "Некоректный радиус шапки болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadBolt = wrong_radBold;
-                    Parametrs.RadBolt = wrong_radBold;},
+            () => { Parametrs.RadBolt = wrong_radBold;},
             "Некоректная толщина шапки");
 
         }

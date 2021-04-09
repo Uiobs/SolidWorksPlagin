@@ -37,7 +37,6 @@ namespace PlaginUI
         /// </summary>
         private void CreateModel_Click(object sender, EventArgs e)
         {
-            Validation();
             try
             {
             Parametrs.RadTop = float.Parse(textBox1.Text);
@@ -60,18 +59,6 @@ namespace PlaginUI
         private void ClearDoc_Click(object sender, EventArgs e)
         {
             Builder.ClearDoc();
-        }
-
-        /// <summary>
-        /// Проверка корректности ввода данных
-        /// </summary>
-        private void Validation()
-        {
-            Parametrs.RadTop = float.Parse(textBox1.Text);
-            Parametrs.WidthTop = float.Parse(textBox2.Text);
-            Parametrs.RadBolt = float.Parse(textBox3.Text);
-            Parametrs.LenghtBolt = float.Parse(textBox4.Text);
-            Parametrs.RadCut = float.Parse(textBox5.Text); ;
         }
 
         /// <summary>

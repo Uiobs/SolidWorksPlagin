@@ -39,9 +39,8 @@ namespace Plagin
             get => _radTop; 
             set
             {
-                if (_radTop >= 100)
+                if (value >= 100)
                 {
-                    _radTop = 30;
                     throw new ArgumentException("Радиус шапки не может быть" +
                         " больше или равно 100mm!");
                 }
@@ -59,9 +58,8 @@ namespace Plagin
             get =>_widthTop;
             set
             {
-                if (_widthTop >= 100)
+                if (value >= 100)
                 {
-                    _widthTop = 10;
                     throw new ArgumentException("Толщина шапки не может быть" +
                         " больше или равно 100m");
                 }
@@ -80,9 +78,8 @@ namespace Plagin
             get => _radCut;
             set
             {
-                if (_radCut >= _radTop)
+                if (value >= _radTop)
                 {
-                    _radCut = 10;
                     throw new ArgumentException("Радиус вырезки не может быть" +
                         " больше или равен радиусу шапки");
                 }
@@ -101,9 +98,8 @@ namespace Plagin
             get => _lengthBolt;
             set
             {
-                if (_lengthBolt >= 500)
+                if (value >= 500)
                 {
-                    _lengthBolt = 100;
                     throw new ArgumentException("Длина болта не может быть" +
                         " больше или равен 500m");
                 }
@@ -122,15 +118,13 @@ namespace Plagin
             get => _radBolt;
             set
             {
-                if (_radBolt >= 100)
+                if (value >= 100)
                 {
-                    _radBolt = 15;
                     throw new ArgumentException("Радиус болта не может быть" +
                         " больше или равен 100m");
                 }
-                else if (_radBolt >= _radTop)
+                else if (value >= _radTop)
                 {
-                    _radBolt = 15;
                     throw new ArgumentException("Радиус болта не может быть" +
                         " больше или равен радиуса шапки");
                 }
