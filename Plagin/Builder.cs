@@ -8,6 +8,7 @@ namespace Plugin
     /// </summary>
     public class Builder
     {
+        //TODO:
         /// <summary>
         /// Константа для привидение значений к значений SolidWorks
         /// </summary>

@@ -47,12 +47,12 @@ namespace PluginUI
         {
             try
             {
-            Parametrs.RadTop = float.Parse(textBox1.Text);
-            Parametrs.WidthTop = float.Parse(textBox2.Text);
-            Parametrs.RadBolt = float.Parse(textBox3.Text);
-            Parametrs.LenghtBolt = float.Parse(textBox4.Text);
-            Parametrs.RadCut = float.Parse(textBox5.Text);
-            Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
+                Parametrs.RadTop = float.Parse(textBox1.Text);
+                Parametrs.WidthTop = float.Parse(textBox2.Text);
+                Parametrs.RadBolt = float.Parse(textBox3.Text);
+                Parametrs.LenghtBolt = float.Parse(textBox4.Text);
+                Parametrs.RadCut = float.Parse(textBox5.Text);
+                Builder.CreateModel(Parametrs.RadTop, Parametrs.WidthTop,
                 Parametrs.RadBolt, Parametrs.LenghtBolt, Parametrs.RadCut);
             }
             catch (Exception ex)
@@ -83,7 +83,11 @@ namespace PluginUI
         /// </summary>
         private void CheckValid_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar <= '0' || e.KeyChar >= '9') && e.KeyChar != backspace && e.KeyChar != '.')
+            //TODO: const
+
+            if ((e.KeyChar <= '0' || e.KeyChar >= '9') 
+                && e.KeyChar != backspace 
+                && e.KeyChar != '.')
             {
                 e.Handled = true;
             }
