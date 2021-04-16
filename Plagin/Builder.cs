@@ -9,6 +9,11 @@ namespace Plugin
     public class Builder
     {
         /// <summary>
+        /// Константа для привидение значений к значений SolidWorks
+        /// </summary>
+        private const float solidValue = 1000;
+
+        /// <summary>
         /// Переменная для взаимодействие с программой
         /// </summary>
         private SldWorks _swApp;
@@ -119,7 +124,6 @@ namespace Plugin
         public void ChangeSize(ref float radTop, ref float widthTop, ref float radBolt,
             ref float lenghtBolt, ref float radCut)
         {
-            const float solidValue = 1000;
             radTop /= solidValue;
             widthTop /= solidValue;
             radBolt /= solidValue;
