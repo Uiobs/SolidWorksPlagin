@@ -12,36 +12,38 @@ namespace UnitTest
         [Test(Description = "Позитивный тест на корректность значений")]
         public void CorrectParametrs()
         {
-             //TODO: RSDN
             //setup
-            Parametrs Parametrs = new Parametrs();
+            Parametrs parametrs = new Parametrs();
             var expectedLengtBolt = 100;
             var expectedRadBold = 15;
             var expectedRadCut = 10;
             var expectedRadTop = 30;
             var expectedWidthTop = 10;
 
-            Parametrs.RadTop = 30;
-            Parametrs.WidthTop = 10;
-            Parametrs.RadCut = 10;
-            Parametrs.LenghtBolt = 100;
-            Parametrs.RadBolt = 15;
+            parametrs.RadTop = 30;
+            parametrs.WidthTop = 10;
+            parametrs.RadCut = 10;
+            parametrs.LenghtBolt = 100;
+            parametrs.RadBolt = 15;
             
-             //TODO: RSDN
             //assert
-            Assert.AreEqual(Parametrs.LenghtBolt, expectedLengtBolt, "Длина болта больше допустимой");
-            Assert.AreEqual(Parametrs.RadBolt, expectedRadBold, "Радиус болта больше допустимой");
-            Assert.AreEqual(Parametrs.RadCut, expectedRadCut, "Радиус вырезки больше допустимой");
-            Assert.AreEqual(Parametrs.RadTop, expectedRadTop, "Радиус шапки больше допустимой");
-            Assert.AreEqual(Parametrs.WidthTop, expectedWidthTop, "Толщина вырезки больше допустимой");
+            Assert.AreEqual(parametrs.LenghtBolt, expectedLengtBolt,
+                "Длина болта больше допустимой");
+            Assert.AreEqual(parametrs.RadBolt, expectedRadBold, 
+                "Радиус болта больше допустимой");
+            Assert.AreEqual(parametrs.RadCut, expectedRadCut, 
+                "Радиус вырезки больше допустимой");
+            Assert.AreEqual(parametrs.RadTop, expectedRadTop, 
+                "Радиус шапки больше допустимой");
+            Assert.AreEqual(parametrs.WidthTop, expectedWidthTop, 
+                "Толщина вырезки больше допустимой");
         }
 
         [Test(Description = "Негативный тест на корректность значений")]
         public void UncorrectParametrs()
         {
-             //TODO: RSDN
             //setup
-            Parametrs Parametrs = new Parametrs();
+            Parametrs parametrs = new Parametrs();
             var wrongLengtBolt = 1000;
             var wrongRadBold = 150;
             var wrongRadCut = 100;
@@ -50,45 +52,36 @@ namespace UnitTest
 
             //assert
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadTop = wrongRadTop;},
+            () => { parametrs.RadTop = wrongRadTop;},
             "Некоректная длина болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.WidthTop = wrongWidthTop;},
+            () => { parametrs.WidthTop = wrongWidthTop;},
             "Некоректный радиус болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadCut = wrongRadCut;},
+            () => { parametrs.RadCut = wrongRadCut;},
             "Некоректный радиус вырезки болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.LenghtBolt = wrongLengtBolt;},
+            () => { parametrs.LenghtBolt = wrongLengtBolt;},
             "Некоректный радиус шапки болта");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadBolt = wrongRadBold;},
+            () => { parametrs.RadBolt = wrongRadBold;},
             "Некоректная толщина шапки");
         }
 
         [Test(Description = "Тест на корректность зависимостей")]
         public void Dependence()
         {
-             //TODO: RSDN
             //setup
-            Parametrs Parametrs = new Parametrs();
-            var expectedRadBolt = 150;
-            var expectedRadCut = 100;
-            var expectedRadTop = 30;
+            Parametrs parametrs = new Parametrs();
+
+            parametrs.RadTop = 30;
+            var expectedRadBolt = 60;
 
             //assert
             Assert.Throws<ArgumentException>(
             () => 
-            { 
-                Parametrs.RadTop = expectedRadTop;
-                Parametrs.RadCut = expectedRadCut;
-            },
-            "Некоректная зависимость вырезки и шапки");
-            Assert.Throws<ArgumentException>(
-            () => 
-            { 
-                Parametrs.RadTop = expectedRadTop;
-                Parametrs.RadBolt = expectedRadBolt;
+            {
+                parametrs.RadBolt = expectedRadBolt;
             },
             "Некоректная зависимость толщины болта и шапки");
         }

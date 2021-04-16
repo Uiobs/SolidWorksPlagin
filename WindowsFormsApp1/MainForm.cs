@@ -10,11 +10,6 @@ namespace PluginUI
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Константа для обозначения клавиши backspace
-        /// </summary>
-        private const int backspace = 8;
-
-        /// <summary>
         /// Получение данных о параметрах болта
         /// </summary>
         private Parametrs Parametrs = new Parametrs();
@@ -83,8 +78,7 @@ namespace PluginUI
         /// </summary>
         private void CheckValid_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //TODO: const
-
+            const int backspace = 8;
             if ((e.KeyChar <= '0' || e.KeyChar >= '9') 
                 && e.KeyChar != backspace 
                 && e.KeyChar != '.')
