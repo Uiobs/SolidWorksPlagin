@@ -75,6 +75,7 @@ namespace UnitTest
             Parametrs parametrs = new Parametrs();
 
             parametrs.RadTop = 30;
+            var exectedRadCut = 60;
             var expectedRadBolt = 60;
 
             //assert
@@ -84,6 +85,12 @@ namespace UnitTest
                 parametrs.RadBolt = expectedRadBolt;
             },
             "Некоректная зависимость толщины болта и шапки");
+            Assert.Throws<ArgumentException>(
+            () =>
+            {
+                parametrs.RadCut = exectedRadCut;
+            },
+            "Некоректная зависимость толщины болта и вырезки");
         }
     }
 }
