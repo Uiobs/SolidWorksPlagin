@@ -1,20 +1,28 @@
 ﻿using System;
 using System.Windows.Forms;
-using Plagin;
+using Plugin;
 
-namespace PlaginUI
+namespace PluginUI
 {
+    /// <summary>
+    /// Класс главной формы
+    /// </summary>
     public partial class MainForm : Form
     {
         /// <summary>
+        /// Константа для обозначения клавиши backspace
+        /// </summary>
+        private const int backspace = 8;
+
+        /// <summary>
         /// Получение данных о параметрах болта
         /// </summary>
-        Parametrs Parametrs = new Parametrs();
-
+        private Parametrs Parametrs = new Parametrs();
+        
         /// <summary>
         /// Информация о структуре програмы 
         /// </summary>
-        Builder Builder = new Builder();
+        private Builder Builder = new Builder();
         
         /// <summary>
         /// Начальная загрузка формы
@@ -73,14 +81,9 @@ namespace PlaginUI
         /// <summary>
         /// Проверка на ввод букв
         /// </summary>
-        /// <remarks>
-        /// e.KeyChar = 47-58 - цифры от 0-9
-        /// e.KeyChar = 8 - backspace
-        /// e.KeyChar = 44 - запятая
-        /// </remarks>
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void CheckValid_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8 && e.KeyChar != 44)
+            if ((e.KeyChar <= '0' || e.KeyChar >= '9') && e.KeyChar != backspace && e.KeyChar != '.')
             {
                 e.Handled = true;
             }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Plagin
+namespace Plugin
 {
     /// <summary>
     /// Класс, содержащий параметры модели
@@ -35,8 +35,9 @@ namespace Plagin
         /// <summary>
         /// Модификатор доступа к радиусу шапки болта
         /// </summary>
-        public float RadTop {
-            get => _radTop; 
+        public float RadTop
+        {
+            get => _radTop;
             set
             {
                 if (value >= 100)
@@ -54,8 +55,9 @@ namespace Plagin
         /// <summary>
         /// Модификатор доступа к высоте шапки болта
         /// </summary>
-        public float WidthTop {
-            get =>_widthTop;
+        public float WidthTop
+        {
+            get => _widthTop;
             set
             {
                 if (value >= 100)

@@ -1,13 +1,18 @@
 ﻿using System.Runtime.InteropServices;
 using SolidWorks.Interop.sldworks;
 
-namespace Plagin
+namespace Plugin
 {
     /// <summary>
     /// Класс, отвечающий за создание модели
     /// </summary>
     public class Builder
     {
+        /// <summary>
+        /// Константа для привидение значений к значений SolidWorks
+        /// </summary>
+        private const float solidValue = 1000;
+
         /// <summary>
         /// Переменная для взаимодействие с программой
         /// </summary>
@@ -119,11 +124,11 @@ namespace Plagin
         public void ChangeSize(ref float radTop, ref float widthTop, ref float radBolt,
             ref float lenghtBolt, ref float radCut)
         {
-            radTop /= 1000;
-            widthTop /= 1000;
-            radBolt /= 1000;
-            lenghtBolt /= 1000;
-            radCut /= 1000;
+            radTop /= solidValue;
+            widthTop /= solidValue;
+            radBolt /= solidValue;
+            lenghtBolt /= solidValue;
+            radCut /= solidValue;
         }
     }
 }
