@@ -61,10 +61,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Plagin\Plugin.Builder.csproj">
-      <Project>{5699CFC3-A250-49C9-835B-211D8AF4FDDC}</Project>
-      <Name>Plugin.Builder</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Plugin.Parametrs\Plugin.Parametrs.csproj">
       <Project>{b46bb46d-dc77-46c4-b121-d0794ba31735}</Project>
       <Name>Plugin.Parametrs</Name>

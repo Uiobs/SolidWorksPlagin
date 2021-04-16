@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1340
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.UI", "WindowsFormsApp1\Plugin.UI.csproj", "{AD7E393C-4D6C-4E66-963F-52478969FAF0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -17,9 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.UnitTest", "PlaginUnitTest\Plugin.UnitTest.csproj", "{BBC30994-9E71-4B76-80D0-8E825BCCA7D6}"
-	ProjectSection(ProjectDependencies) = postProject
-		{AD7E393C-4D6C-4E66-963F-52478969FAF0} = {AD7E393C-4D6C-4E66-963F-52478969FAF0}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Parametrs", "Plugin.Parametrs\Plugin.Parametrs.csproj", "{B46BB46D-DC77-46C4-B121-D0794BA31735}"
 EndProject

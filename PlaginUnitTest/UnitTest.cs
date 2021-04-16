@@ -12,6 +12,7 @@ namespace UnitTest
         [Test(Description = "Позитивный тест на корректность значений")]
         public void CorrectParametrs()
         {
+             //TODO: RSDN
             //setup
             Parametrs Parametrs = new Parametrs();
             var expectedLengtBolt = 100;
@@ -26,6 +27,7 @@ namespace UnitTest
             Parametrs.LenghtBolt = 100;
             Parametrs.RadBolt = 15;
             
+             //TODO: RSDN
             //assert
             Assert.AreEqual(Parametrs.LenghtBolt, expectedLengtBolt, "Длина болта больше допустимой");
             Assert.AreEqual(Parametrs.RadBolt, expectedRadBold, "Радиус болта больше допустимой");
@@ -37,6 +39,7 @@ namespace UnitTest
         [Test(Description = "Негативный тест на корректность значений")]
         public void UncorrectParametrs()
         {
+             //TODO: RSDN
             //setup
             Parametrs Parametrs = new Parametrs();
             var wrongLengtBolt = 1000;
@@ -66,6 +69,7 @@ namespace UnitTest
         [Test(Description = "Тест на корректность зависимостей")]
         public void Dependence()
         {
+             //TODO: RSDN
             //setup
             Parametrs Parametrs = new Parametrs();
             var expectedRadBolt = 150;
@@ -74,13 +78,18 @@ namespace UnitTest
 
             //assert
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadTop = expectedRadTop;
-                    Parametrs.RadCut = expectedRadCut;
+            () => 
+            { 
+                Parametrs.RadTop = expectedRadTop;
+                Parametrs.RadCut = expectedRadCut;
             },
             "Некоректная зависимость вырезки и шапки");
             Assert.Throws<ArgumentException>(
-            () => { Parametrs.RadTop = expectedRadTop;
-                    Parametrs.RadBolt = expectedRadBolt;},
+            () => 
+            { 
+                Parametrs.RadTop = expectedRadTop;
+                Parametrs.RadBolt = expectedRadBolt;
+            },
             "Некоректная зависимость толщины болта и шапки");
         }
     }
