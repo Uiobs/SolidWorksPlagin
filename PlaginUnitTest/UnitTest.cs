@@ -48,7 +48,6 @@ namespace UnitTest
             var wrongRadBold = 150;
             var wrongRadCut = 100;
             var wrongRadTop = 300;
-            var wrongWidthTop = 100;
 
             //assert
             Assert.Throws<ArgumentException>(
@@ -77,6 +76,7 @@ namespace UnitTest
             parametrs.RadTop = 30;
             var exectedRadCut = 60;
             var expectedRadBolt = 60;
+            var expectedWidthCut = 60;
 
             //assert
             Assert.Throws<ArgumentException>(
@@ -89,6 +89,12 @@ namespace UnitTest
             () =>
             {
                 parametrs.RadCut = exectedRadCut;
+            },
+            "Некоректная зависимость толщины болта и вырезки");
+            Assert.Throws<ArgumentException>(
+            () =>
+            {
+                parametrs.WidthCut = expectedWidthCut;
             },
             "Некоректная зависимость толщины болта и вырезки");
         }

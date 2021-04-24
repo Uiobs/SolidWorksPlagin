@@ -8,6 +8,11 @@ namespace Plugin
     public class Parametrs
     {
         /// <summary>
+        /// Отвечает за глубину вырезки
+        /// </summary>
+        private float _widthCut;
+
+        /// <summary>
         /// Отвечает за радиус шапки болта
         /// </summary>
         private float _radTop;
@@ -31,6 +36,26 @@ namespace Plugin
         /// Отвечает за радиус вырезки шапки
         /// </summary>
         private float _radCut;
+
+        /// <summary>
+        /// Модификатор доступа к глубине вырезки
+        /// </summary>
+        public float WidthCut
+        {
+            get => _widthCut;
+            set
+            {
+                if (value >= _widthTop)
+                {
+                    throw new ArgumentException("Глубина вырезки не может быть" +
+                        " больше или равно радиусу шапки!");
+                }
+                else
+                {
+                    _widthCut = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Модификатор доступа к радиусу шапки болта

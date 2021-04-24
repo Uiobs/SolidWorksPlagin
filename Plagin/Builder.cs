@@ -23,11 +23,8 @@ namespace Plugin
         /// </summary>
         public void CreateNewDoc()
         {
-           // Connector();
-            //_swApp.NewPart();
-            //_swModel.Extension.SelectByID2("Point1@Origin", "EXTSKETCHPOINT",
-            //    0, 0, 0, false, 0, null, 0);
-            _swModel.BlankSketch();
+            Connector();
+            _swApp.NewPart();
         }
 
         /// <summary>
@@ -50,14 +47,15 @@ namespace Plugin
         /// Создание документа
         /// </summary>
         public void CreateModel(float radTop, float widthTop, float radBolt, 
-            float lenghtBolt, float radCut)
+            float lenghtBolt, float radCut,float widthCut)
         {
             _swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             _swApp.Visible = true;
             _swModel = _swApp.IActiveDoc2;
 
             ClearDoc();
-            ChangeSize(ref radTop,ref widthTop,ref radBolt,ref lenghtBolt,ref radCut);
+            ChangeSize(ref radTop,ref widthTop,ref radBolt,ref lenghtBolt,
+                ref radCut,ref widthCut);
 
             _swModel.SketchManager.CreateCircle(0, 0, 0, radTop, 0.007061
                 , 0);
@@ -74,7 +72,7 @@ namespace Plugin
             _swModel.ClearSelection2(true);
             _swModel.SketchManager.CreateCircle(0,0,0,radCut,0.0022985,0);
             _swModel.FeatureManager.FeatureCut4(true, false, false, 0, 0,
-                0.001, 0.001,false, false, false, false, 0.3,
+                widthCut, 0.001,false, false, false, false, 0.3,
                 0.3, false, false, false, false, false,
                 true, true, true, true, false, 0, 0, false, false);
             _swModel.ISelectionManager.EnableContourSelection = false;
@@ -117,7 +115,7 @@ namespace Plugin
         /// Перевод параметров в значения SolidWorks
         /// </summary>
         public void ChangeSize(ref float radTop, ref float widthTop, ref float radBolt,
-            ref float lenghtBolt, ref float radCut)
+            ref float lenghtBolt, ref float radCut,ref float widthCut)
         {
             const float solidValue = 1000;
             radTop /= solidValue;
@@ -125,6 +123,7 @@ namespace Plugin
             radBolt /= solidValue;
             lenghtBolt /= solidValue;
             radCut /= solidValue;
+            widthCut /= solidValue;
         }
     }
 }
