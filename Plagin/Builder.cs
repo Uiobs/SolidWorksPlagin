@@ -114,7 +114,7 @@ namespace Plugin
         /// <summary>
         /// Перевод параметров в значения SolidWorks
         /// </summary>
-        public void ChangeSize(ref float radTop, ref float widthTop, ref float radBolt,
+        private void ChangeSize(ref float radTop, ref float widthTop, ref float radBolt,
             ref float lenghtBolt, ref float radCut,ref float widthCut)
         {
             const float solidValue = 1000;

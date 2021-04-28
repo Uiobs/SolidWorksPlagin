@@ -19,12 +19,14 @@ namespace UnitTest
             var expectedRadCut = 10;
             var expectedRadTop = 30;
             var expectedWidthTop = 10;
+            var expectedWidthCut = 8;
 
             parametrs.RadTop = 30;
             parametrs.WidthTop = 10;
             parametrs.RadCut = 10;
             parametrs.LenghtBolt = 100;
             parametrs.RadBolt = 15;
+            parametrs.WidthCut = 8;
             
             //assert
             Assert.AreEqual(parametrs.LenghtBolt, expectedLengtBolt,
@@ -37,6 +39,8 @@ namespace UnitTest
                 "Радиус шапки больше допустимой");
             Assert.AreEqual(parametrs.WidthTop, expectedWidthTop, 
                 "Толщина вырезки больше допустимой");
+            Assert.AreEqual(parametrs.WidthCut, expectedWidthCut,
+              "Толщина вырезки больше допустимой");
         }
 
         [Test(Description = "Негативный тест на корректность значений")]
@@ -48,6 +52,7 @@ namespace UnitTest
             var wrongRadBold = 150;
             var wrongRadCut = 100;
             var wrongRadTop = 300;
+            var wrongWidthTop = 300;
 
             //assert
             Assert.Throws<ArgumentException>(

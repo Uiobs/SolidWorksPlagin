@@ -41,14 +41,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.CreateDoc = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(349, 28);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Создать фигуру";
+            this.button1.Text = "Создать модель";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.CreateModel_Click);
             // 
@@ -179,36 +179,6 @@
             this.panel1.Size = new System.Drawing.Size(352, 273);
             this.panel1.TabIndex = 12;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(0, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Радиус вырезки";
-            // 
-            // CreateDoc
-            // 
-            this.CreateDoc.Location = new System.Drawing.Point(12, 28);
-            this.CreateDoc.Name = "CreateDoc";
-            this.CreateDoc.Size = new System.Drawing.Size(351, 28);
-            this.CreateDoc.TabIndex = 17;
-            this.CreateDoc.Text = "Создать новый документ";
-            this.CreateDoc.UseVisualStyleBackColor = true;
-            this.CreateDoc.Click += new System.EventHandler(this.CreateDoc_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Наличие вырезки";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label5);
@@ -219,14 +189,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 51);
             this.panel2.TabIndex = 17;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(188, 25);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(157, 20);
-            this.textBox6.TabIndex = 17;
-            this.textBox6.Text = "0,5";
             // 
             // label5
             // 
@@ -239,6 +201,44 @@
             this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 18;
             this.label5.Text = "Глубина вырезки";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(188, 25);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(157, 20);
+            this.textBox6.TabIndex = 17;
+            this.textBox6.Text = "0,5";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(0, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Радиус вырезки";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(7, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 17);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Наличие вырезки";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // CreateDoc
+            // 
+            this.CreateDoc.Location = new System.Drawing.Point(12, 28);
+            this.CreateDoc.Name = "CreateDoc";
+            this.CreateDoc.Size = new System.Drawing.Size(351, 28);
+            this.CreateDoc.TabIndex = 17;
+            this.CreateDoc.Text = "Создать новый документ";
+            this.CreateDoc.UseVisualStyleBackColor = true;
+            this.CreateDoc.Click += new System.EventHandler(this.CreateDoc_Click);
             // 
             // MainForm
             // 
