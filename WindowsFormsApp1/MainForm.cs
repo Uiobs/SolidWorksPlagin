@@ -106,21 +106,14 @@ namespace PluginUI
             }
         }
 
+        //TODO: RSDN naming
         /// <summary>
         /// Проверка на наличие вырезки
         /// </summary>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked == true)
-            {
-                panel2.Enabled = false;
-                CheckCut = false;
-            }
-            else
-            {
-                panel2.Enabled = true;
-                CheckCut = true;
-            }
+            panel2.Enabled = !checkBox1.Checked;
+            CheckCut = !checkBox1.Checked;
         }
     }
 }
