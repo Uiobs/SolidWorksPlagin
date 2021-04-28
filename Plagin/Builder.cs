@@ -33,9 +33,11 @@ namespace Plugin
         public void ClearDoc()
         {
             Connector();
-             //TODO: RSDN
-            _swModel.Extension.SelectByID2("Point1@Origin", "EXTSKETCHPOINT", 0, 0, 0, false, 0, null, 0);
+
+            _swModel.Extension.SelectByID2("Point1@Origin", "EXTSKETCHPOINT",
+                0, 0, 0, false, 0, null, 0);
             _swModel.BlankSketch();
+
             //Удаляет последовательно элементы в моделе, элементов в моделе 7
             for (int i = 0; i <= 6; i++)
             {

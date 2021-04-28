@@ -9,17 +9,16 @@ namespace UnitTest
     public class UnitTest
     {
 
-        [Test(Description = "Позитивный тест на корректность значений")]
-        public void CorrectParametrs()
+        [Test]
+        [TestCase(100,15,10,30,10,8,
+            TestName = "Позитивый тест на ввод корректных значений")]
+        public void CorrectParametrs(float expectedLengtBolt,
+            float expectedRadBold,float expectedRadCut, float
+            expectedRadTop, float expectedWidthTop,float
+            expectedWidthCut)
         {
             //setup
             Parametrs parametrs = new Parametrs();
-            var expectedLengtBolt = 100;
-            var expectedRadBold = 15;
-            var expectedRadCut = 10;
-            var expectedRadTop = 30;
-            var expectedWidthTop = 10;
-            var expectedWidthCut = 8;
 
             parametrs.RadTop = 30;
             parametrs.WidthTop = 10;
@@ -43,16 +42,15 @@ namespace UnitTest
               "Толщина вырезки больше допустимой");
         }
 
-        [Test(Description = "Негативный тест на корректность значений")]
-        public void UncorrectParametrs()
+        [Test]
+        [TestCase(1000, 150, 100, 300, 300,
+            TestName = "Негативный тест на корректность значений")]
+        public void UncorrectParametrs(float wrongLengtBolt,
+            float wrongRadBold, float wrongRadCut, float
+            wrongRadTop, float wrongWidthTop)
         {
             //setup
             Parametrs parametrs = new Parametrs();
-            var wrongLengtBolt = 1000;
-            var wrongRadBold = 150;
-            var wrongRadCut = 100;
-            var wrongRadTop = 300;
-            var wrongWidthTop = 300;
 
             //assert
             Assert.Throws<ArgumentException>(
@@ -72,16 +70,16 @@ namespace UnitTest
             "Некоректная толщина шапки");
         }
 
-        [Test(Description = "Тест на корректность зависимостей")]
-        public void Dependence()
+        [Test]
+        [TestCase(60, 60, 60,
+            TestName = "Тест на корректность зависимостей")]
+        public void Dependence(float exectedRadCut, float
+            expectedRadBolt, float expectedWidthCut)
         {
             //setup
             Parametrs parametrs = new Parametrs();
 
             parametrs.RadTop = 30;
-            var exectedRadCut = 60;
-            var expectedRadBolt = 60;
-            var expectedWidthCut = 60;
 
             //assert
             Assert.Throws<ArgumentException>(
