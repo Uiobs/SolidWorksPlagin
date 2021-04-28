@@ -87,7 +87,7 @@ namespace PluginUI
         /// </summary>
         private void CreateDoc_Click(object sender, EventArgs e)
         {
-            //Builder.CreateNewDoc();
+            Builder.CreateNewDoc();
             panel1.Enabled = true;
             panel2.Enabled = true;
         }
