@@ -9,11 +9,11 @@ namespace PluginUI
     /// </summary>
     public partial class MainForm : Form
     {
-         //TODO: RSDN
+
         /// <summary>
         /// Проверка на наличие вырезки
         /// </summary>
-        private bool CheckCut = true;
+        private bool _checkCut = true;
 
         /// <summary>
         /// Получение данных о параметрах болта
@@ -54,7 +54,7 @@ namespace PluginUI
                 Parametrs.RadBolt = float.Parse(textBox3.Text);
                 Parametrs.LenghtBolt = float.Parse(textBox4.Text);
 
-                if(CheckCut == false)
+                if(_checkCut == false)
                 {
                     Parametrs.WidthCut = 0;
                     Parametrs.RadCut = 0;
@@ -113,7 +113,7 @@ namespace PluginUI
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             panel2.Enabled = !checkBox1.Checked;
-            CheckCut = !checkBox1.Checked;
+            _checkCut = !checkBox1.Checked;
         }
     }
 }
