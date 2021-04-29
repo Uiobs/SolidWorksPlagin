@@ -9,6 +9,7 @@ namespace PluginUI
     /// </summary>
     public partial class MainForm : Form
     {
+         //TODO: RSDN
         /// <summary>
         /// Проверка на наличие вырезки
         /// </summary>
@@ -106,7 +107,6 @@ namespace PluginUI
             }
         }
 
-        //TODO: RSDN naming
         /// <summary>
         /// Проверка на наличие вырезки
         /// </summary>
